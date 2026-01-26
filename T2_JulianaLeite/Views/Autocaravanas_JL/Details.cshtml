@@ -1,0 +1,37 @@
+﻿@model T2_JulianaLeite.Models.Autocaravana_JL
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Autocaravana_JL</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Matricula_JL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Matricula_JL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Diaria_JL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Diaria_JL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ParqueAutocaravanismo_JL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ParqueAutocaravanismo_JL.ParqueAutocaravanismo_JLId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Autocaravana_JLId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

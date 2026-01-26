@@ -1,0 +1,45 @@
+﻿@model T2_JulianaLeite.Models.Autocaravana_JL
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Autocaravana_JL</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Autocaravana_JLId" />
+            <div class="form-group">
+                <label asp-for="Matricula_JL" class="control-label"></label>
+                <input asp-for="Matricula_JL" class="form-control" />
+                <span asp-validation-for="Matricula_JL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diaria_JL" class="control-label"></label>
+                <input asp-for="Diaria_JL" class="form-control" />
+                <span asp-validation-for="Diaria_JL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParqueAutocaravanismo_JLId" class="control-label"></label>
+                <select asp-for="ParqueAutocaravanismo_JLId" class="form-control" asp-items="ViewBag.ParqueAutocaravanismo_JLId"></select>
+                <span asp-validation-for="ParqueAutocaravanismo_JLId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

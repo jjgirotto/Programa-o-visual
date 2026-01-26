@@ -1,0 +1,47 @@
+﻿@model ESTSCarro_JL.Models.Carro_JL
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Carro_JL</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Carro_JLId" />
+            <div class="form-group">
+                <label asp-for="Marca_JL" class="control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="Marca_JL" asp-items="Html.GetEnumSelectList<Marcas_JL>()">
+                        <option selected="selected" value="">Please select"</option>
+                    </select>
+                    <span asp-validation-for="Marca_JL" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modelo_JL" class="control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="Modelo_JL" asp-items="Html.GetEnumSelectList<Modelos_JL>()">
+                        <option selected="selected" value="">Please select"</option>
+                    </select>
+                    <span asp-validation-for="Modelo_JL" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
